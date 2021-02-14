@@ -46,5 +46,10 @@ Response:
   "Start": 101,
   "End": 119,
   "Prime Count": 5
-}
+} <br />
 
+4. Get API Docs: FastAPI - Swagger UI
+```
+/docs
+```
+<img src="https://user-images.githubusercontent.com/30416024/107880540-6aaa5700-6f05-11eb-8ae3-cccbd19e9376.png" width="742" /> 

@@ -2,6 +2,12 @@
 
 This API is made using [FastAPI](https://fastapi.tiangolo.com) in Python.
 
+### How to start local server
+```
+1. pip install -r requirements.txt
+2. unicorn main:app --reload
+```
+
 ### Usage
 1. A *num* is prime or not
 ```

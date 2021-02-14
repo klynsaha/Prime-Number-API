@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from typing import Optional
-from pydantic import BaseModel
 import math
 
 app = FastAPI()
@@ -9,7 +8,7 @@ app = FastAPI()
 def read_root():
     return {"Greetings": "Welcome to Number API"}
 
-# Prime Numbers
+
 @app.get("/prime/{number}")
 def prime(number: int):
     response = {
@@ -17,6 +16,7 @@ def prime(number: int):
         "Prime": is_prime(number)
     }
     return response
+
 
 @app.get("/prime/{start_no}/{end_no}/{list}")
 @app.get("/prime/{start_no}/{end_no}/")
@@ -41,6 +41,7 @@ def is_prime(number: int):
             return False
     return True
 
+
 def get_primes(start_no: int, end_no: int):
     primes = []
     start_no = 2 if start_no < 1 else start_no
@@ -48,5 +49,3 @@ def get_primes(start_no: int, end_no: int):
         if(is_prime(i)):
             primes.append(i)
     return {"Prime Count": len(primes), "Primes": primes}
-
-# Prime Numbers

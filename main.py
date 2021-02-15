@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.responses import RedirectResponse
 from typing import Optional
 import math
 
@@ -6,7 +7,7 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"Greetings": "Welcome to Number API"}
+    return RedirectResponse('/docs')
 
 
 @app.get("/prime/{number}")

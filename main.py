@@ -19,15 +19,14 @@ def prime(number: int):
     return response
 
 
-@app.get("/prime/{start_no}/{end_no}/{list}")
 @app.get("/prime/{start_no}/{end_no}/")
-def is_prime(start_no: int, end_no: int, list: Optional[bool] = True):
+def is_prime(start_no: int, end_no: int, show: bool = False):
     response = {
         "Start": start_no,
         "End": end_no,
     }
     r = get_primes(start_no, end_no)
-    if list:
+    if show:
         response.update(r)
     else:
         response["Prime Count"] = r["Prime Count"]
